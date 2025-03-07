@@ -1,0 +1,360 @@
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Light.ttf) format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(220, 220, 220);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 5fr;
+  height: 100%;
+}
+
+.dashboard-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 30px;
+}
+
+.dashboard-logo > svg {
+  width: 48px;
+  height: 48px;
+  fill: rgb(255, 255, 255);
+}
+
+.sidebar {
+  grid-row: 1 / 3;
+  padding: 24px;
+  background-color: rgb(0, 166, 251);
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.dashboard-logo, .main-options {
+  margin-bottom: 40px;
+}
+
+.main-options, .other-options {
+  list-style-type: none;
+  display: grid;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.menu-options {
+  padding-left: 16px;
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+li > svg {
+  width: 25px;
+  height: 25px;
+  fill: rgb(255, 255, 255);
+}
+
+.main-header {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 5px 2px 5px 3px #cac9c9;
+  background-color: rgb(255, 255, 255);
+  row-gap: 24px;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+label[for="search"] > img {
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+label {
+  height: min-content;
+  width: min-content;
+}
+
+#search {
+  width: 85%;
+  background-color: rgb(211, 211, 211);
+  border: none;
+  border-radius: 75px;
+  padding: 8px 12px;
+}
+
+.notif-bell {
+  width: 30px;
+  height: 30px;
+}
+
+.top-right-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-self: end;
+}
+
+.current-user {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bottom-half-header {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 5fr repeat(3, min-content);
+  gap: 30px;
+}
+
+button {
+  border-radius: 80px;
+  justify-self: center;
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(0, 166, 251);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.greetings-container {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.large-pfp {
+  width: 75px;
+  height: 75px;
+  background-color: blue;
+  border-radius: 100%;
+}
+
+.at-user {
+  font-size: 30px;
+}
+
+.main-content {
+  padding: 30px 35px 75px 25px;
+  margin-bottom: auto;
+  z-index: -1;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 24px;
+}
+
+.main-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcements-container,
+.trending-container {
+  flex-grow: 1;
+}
+
+.your-projects-title,
+.announcements-main-title,
+.trending-title {
+  margin-bottom: 12px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.projects-card {
+  height: 210px;
+  border-left: #f9b918 solid 10px;
+  padding: 35px 25px 25px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-info {
+  color: rgb(128, 128, 128);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-options {
+  display: flex;
+  justify-content: right;
+  margin-top: auto;
+  gap: 24px;
+}
+
+.star,
+.eye,
+.three-dots {
+  width: 25px;
+  height: 25px;
+}
+
+.projects-card,
+.announcements-card,
+.trending-card {
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 5px 8px 0px rgb(190, 190, 190);
+}
+
+.announcements-container,
+.trending-container {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.announcements-card {
+  padding: 16px 36px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr min-content 1fr;
+  align-items: center;
+}
+
+.announcement-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.announcement-title {
+  line-height: 1.4rem;
+}
+
+.announcement-info {
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgb(128, 128, 128);
+}
+
+.line {
+  border: solid rgb(211, 211, 211) 1px;
+}
+
+.trending-card {
+  display: grid;
+  padding: 15px 25px;
+}
+
+.trending-user {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.trending-user-info {
+  font-size: 14px;
+}
+
+.trending-username {
+  margin-bottom: 5px;
+}
+
+.trending-project-name {
+  color: rgb(128, 128, 128);
+}
+
+.small-pfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: blue;
+}
+
+.morgan-pfp, 
+.tegan-pfp, 
+.kendall-pfp, 
+.alex-pfp {
+  background-size: cover;
+}
+
+.morgan-pfp {
+  background-image: url(https://img.freepik.com/free-psd/3d-rendering-hair-style-avatar-design_23-2151869121.jpg?t=st=1741384362~exp=1741387962~hmac=0ff01ad444890ad12433019198d75a36ee62f13f5b5e4617df3f73b7ad56c92b&w=740);
+}
+
+.tegan-pfp {
+  background-image: url(https://img.freepik.com/free-psd/3d-rendering-hair-style-avatar-design_23-2151869153.jpg?t=st=1741384786~exp=1741388386~hmac=833079b84124559d3c76a73c05bb354cfe84369e62c1670d03fc843906a7f3d5&w=740);
+}
+
+.kendall-pfp {
+  background-image: url(https://img.freepik.com/free-psd/3d-illustration-with-online-avatar_23-2151303097.jpg?t=st=1741385055~exp=1741388655~hmac=32da5b18adabeb3fda074f190a02bfa094c153828ba8e32022c1b565da709352&w=740);
+}
+
+.alex-pfp {
+  background-image: url(https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671151.jpg?t=st=1741385074~exp=1741388674~hmac=020be44042de68b14caa363570b7b20473741facb1fde1027c98999411b844c6&w=740);
+}
+
+footer {
+  text-align: right;
+  margin-right: 16px;
+  font-size: 12px;
+}
+
+.menu-option:hover,
+.notif-bell:hover,
+.current-user:hover, 
+button {
+  cursor: pointer;
+}
